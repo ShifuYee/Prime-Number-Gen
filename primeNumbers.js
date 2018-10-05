@@ -1,9 +1,4 @@
 'use strict';
-// const output = {
-//   primes: [],
-//   start: 2,
-//   lastInput: 2
-// };
 const Primes = [];
 let LastInput = 2;
 

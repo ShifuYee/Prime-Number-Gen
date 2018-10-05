@@ -21,15 +21,17 @@
       const userInput = document.querySelector('#user-number').value;
       const request = new XMLHttpRequest();
       request.open('POST', '/api', true);
-      request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+      request.setRequestHeader('Content-Type', 'application/json');
       request.onreadystatechange = function() { // Call a function when the state changes.
         if(this.readyState === 4 && this.status === 200) {
           document.querySelector('#results').innerHTML = this.response;
         }
       }
-      request.send(`number=${userInput}`);
+      const data = {number: userInput}
+      request.send(JSON.stringify(data));
     }
   </script>
+  
   <div id="input-section" class="container">
     <h1>
       Prime Number Generator
