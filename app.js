@@ -25,10 +25,9 @@ app.get('/', function (req, res) {
 
 app.use(express.static(path.join(__dirname, '/public')));
 
-app.post('/', function (req, res) {
+app.post('/api', function (req, res) {
   const output = calc.calcPrimeNumbers(req.body.number);
-  console.log(output);
-  res.redirect('/');
+  res.send(output);
 });
 
 app.listen(8000, function () {
