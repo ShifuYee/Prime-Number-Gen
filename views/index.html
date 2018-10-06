@@ -15,31 +15,15 @@
 
 </head>
 
-<body>
-  <script>
-    function submitInput() {
-      const userInput = document.querySelector('#user-number').value;
-      const request = new XMLHttpRequest();
-      request.open('POST', '/api', true);
-      request.setRequestHeader('Content-Type', 'application/json');
-      request.onreadystatechange = function() { // Call a function when the state changes.
-        if(this.readyState === 4 && this.status === 200) {
-          document.querySelector('#results').innerHTML = this.response;
-        }
-      }
-      const data = {number: userInput}
-      request.send(JSON.stringify(data));
-    }
-  </script>
-  
-  <div id="input-section" class="container">
+<body>  
+  <div id="inputSection" class="container">
     <h1>
       Prime Number Generator
     </h1>
     <div class="user-input-and-button">
       <h1>Input number from 1 to 10,000: </h1>
-      <input id="user-number" name="number" type="text" />
-      <button class="user-button" onclick="submitInput()" type="submit">Go!</button>
+      <input id="userNumber" name="number" type="text" />
+      <button class="user-button">Go!</button>
     </div>
     <div id="resultsSection" class="container2">
         <h2 id="results">
@@ -47,5 +31,6 @@
         </h2>
       </div>
   </div>
+  <script src="index.js" type="text/javascript"></script>
 </body>
 </html>
